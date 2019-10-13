@@ -30,5 +30,11 @@ mystery xs = foldr (++) [] (map sing xs)
 -- it will be Integer a -> a
 
 -- 8. Define a function composeList which composes a list of functions into a single function. You should give the type of composeList, and explain why the function has this type. What is the effect of your function on an empty list of functions?
+composeList :: Foldable t => t (b -> b) -> b -> b
+composeList list x = foldr (.) id list x
+-- composeList is a foldable function (Foldable t) that accepts list of functions and an initial value (b -> b) -> (b). It composes the function given from the list (t(b-> b)). It returns the result of the composed function (b).
+-- When given an empty list, the fucntion will return x because it will fold itself with x
 
 -- 9. Define the function flip::(a->b->c)->(b->a->c) which reverses the order in which its function argument takes its arguments
+flip::(a->b->c)->(b->a->c)
+flip a b c = c `a` b
