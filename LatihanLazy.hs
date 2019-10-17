@@ -9,6 +9,7 @@ quickSort (x:xs) = quickSort [ y | y <- xs, y <= x ] ++ [x] ++ quickSort [ y | y
 -- 4. Buatlah definisi infinite list untuk permutation.
 
 -- 5. Buatlah definisi untuk memberikan infinite list dari bilangan prima menerapkan a l g o r i t m a S​ i e v e o f E r a s t o t h e n e s .​
+sieveOfErastothenes [] = []
 sieveOfErastothenes (x:xs) = x : (sieveOfErastothenes [ y | y <- xs, y `mod` x /= 0, y /= x])
 
 -- 6. Buatlah definisi infinite list dari ​triple pythagoras.​ List tersebut terdiri dari element triple bilangan bulat positif yang mengikut persamaan pythagoras x​ 2​ ​ + y2​ ​ = z2​ ​ ​.
