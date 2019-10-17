@@ -1,5 +1,19 @@
 -- 1. Uraikan langkah evaluasi dari ekspresi berikut: [​ x+y | x <- [1 .. 4], y <- [2 .. 4], x > y ]
 -- Pertama diambil nilai x = 1, lalu dicek untuk setiap elemen y apakah nilai x > y. Kalau nilai x dan y memenuhi syarat, x dan y akan dijumlahkan. Lakukan untuk setiap kombinasi x dan y (mulai dari x = 1 dan y = 2 sampai x = 4 dan y = 4)
+-- x | y | x + y | list
+-- 1 | 2 |       |  []
+-- 1 | 3 |       |  [] 
+-- 1 | 4 |       |  [] 
+-- 2 | 2 |       |  [] 
+-- 2 | 3 |       |  [] 
+-- 2 | 4 |       |  [] 
+-- 3 | 2 | 5     |  [5]
+-- 3 | 3 |       |  [5]
+-- 3 | 4 |       |  [5]
+-- 4 | 2 | 6     |  [5, 6]
+-- 4 | 3 | 7     |  [5, 6, 7]
+-- 4 | 4 |       |  [5, 6, 7]
+-- Result : [5, 6, 7]
 
 -- 2. Buatlah fungsi divisor yang menerima sebuah bilangan bulat ​n​ dan mengembalikan list bilangan bulat positif yang membagi habisn
 divisor n = [x | x <- [1..n], n `mod` x == 0]
