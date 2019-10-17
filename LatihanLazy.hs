@@ -4,6 +4,7 @@
 divisor n = [x | x <- [1..n], n `mod` x == 0]
 
 -- 3. Buatlah definisi ​quick sort​ menggunakan list comprehension.
+quickSort (x:xs) = quickSort [ y | y <- xs, y <= x ] ++ [x] ++ quickSort [ y | y <- xs, y > x ]
 
 -- 4. Buatlah definisi infinite list untuk permutation.
 
