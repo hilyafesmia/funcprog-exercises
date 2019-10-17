@@ -37,4 +37,4 @@ composeList list x = foldr (.) id list x
 
 -- 9. Define the function flip::(a->b->c)->(b->a->c) which reverses the order in which its function argument takes its arguments
 flip::(a->b->c)->(b->a->c)
-flip a b c = c `a` b
+flip a b c = a c b
