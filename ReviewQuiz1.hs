@@ -2,7 +2,7 @@
 
 -- 1. Tentukan tipe dan buat definisi fungsi maxTiga yang menerima 3 buah bilangan positif dam menghasilkan bilangan terbesar dari bilangan input tersebut
 maxTiga :: Int -> Int -> Int -> Int
-maxTiga a b c = [ a | a > b, a > c ] || [ b | b > a, b > c ] || [ c | c > a, c > b ]
+maxTiga a b c = max (max a b) c
 
 -- 6. Definisikan fungsi primes yang merupakan sebuah infinite list dari bilangan prima menggunakan algoritma Sieve of Erastothenes
 -- Ada pada file LatihanLazy.hs
