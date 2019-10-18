@@ -6,8 +6,9 @@
 --                                    (mapTree f t2)
 data Tree a = Leaf a | Branch (Tree a) (Tree a)
 
-foldlTree f start (Leaf x) = f start x 
-foldlTree f start (Branch t1 t2) = foldlTree f (f start t1) t2
+foldrTree :: (t1 -> t1 -> t1) -> (t2 -> t1) -> Tree t2 -> t1
+foldrTree f start (Leaf x) = start x 
+foldrTree f start (Branch t1 t2) = f (foldrTree f start t1) (foldrTree f start t2)
 
 -- 2. Pada buku dan contoh sebelumnya, fungsi evaluasi didefinisikan secara rekursif. Gunakan higher order function y​ ang baru dibuat untuk mendefinisikan fungsi evaluasi tersebut. Pastikan memiliki makna semantik yang sama dengan definisi sebelumnya.
 
