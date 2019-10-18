@@ -1,10 +1,10 @@
-1. Rancanglah,​ higher order function ​yang bekerja pada struktur data ekspresi dan memiliki semantik seperti: Fungsi map pada list, Fungsi fold pada tree
--- mapTree :: (a->b) -> Tree a -> Tree b
-    
--- mapTree f (Leaf x)       = Leaf (f x)
--- mapTree f (Branch t1 t2) = Branch (mapTree f t1) 
---                                    (mapTree f t2)
-data Tree a = Leaf a | Branch (Tree a) (Tree a)
+-- 1. Rancanglah,​ higher order function ​yang bekerja pada struktur data ekspresi dan memiliki semantik seperti: Fungsi map pada list, Fungsi fold pada tree
+data Tree a = Leaf a | Branch (Tree a) (Tree a) deriving Show
+
+mapTree :: (a->b) -> Tree a -> Tree b
+mapTree f (Leaf x)       = Leaf (f x)
+mapTree f (Branch t1 t2) = Branch (mapTree f t1) 
+                                   (mapTree f t2)
 
 foldrTree :: (t1 -> t1 -> t1) -> (t2 -> t1) -> Tree t2 -> t1
 foldrTree f start (Leaf x) = start x 
