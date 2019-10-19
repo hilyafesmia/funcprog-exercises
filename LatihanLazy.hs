@@ -56,3 +56,6 @@ merge xxs@(x:xs) yys@(y:ys) | x == y = x : merge xs ys
 
 hamming = 1 : merge (map (2*) hamming) 
                     (merge (map (3*) hamming) (map (5*) hamming))
+
+-- Get numbers smaller than n
+lebihkecil n = [ x | x <- [1 .. n]]
