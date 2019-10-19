@@ -48,7 +48,9 @@ module Robot where
                        do move
                           pickCoin
     
-    
+    -- mapM_ in moven maps every monad object (in this case: move)
+    -- moven n = move >> moven(n-1)
+    -- moven n = move >> move > ... >> move sebanyak n kali
     moven :: Int -> Robot ()
     moven n = mapM_ (const move) [1..n]
     
