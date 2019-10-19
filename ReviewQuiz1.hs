@@ -17,5 +17,7 @@ maxTiga a b c | (a >= b && a >= c) = a | (b >= c) = b | otherwise = c
 updateState :: (RobotState -> RobotState) -> Robot ()
 
 -- 9. Definisikan fungsi turnRight
+turnRight :: Robot()
+turnRight = updateState (\s -> s {facing = right (facing s)})
 
 -- 10. Tentukan tipe fungsi toEnum pada fungsi right
