@@ -43,3 +43,16 @@ fibs  =  1 : 1 : add fibs (tail fibs)
 -- Summing every element of a list
 sumList [] = 0
 sumList (x:xs) = x + sumList xs
+
+-- A problem, due to the mathematician W. R. Hamming, is to write a program that produces an infinite list of numbers with the following properties:
+-- a. The list is in ascending order, without duplicates.
+-- b. The list begins with the number 1.
+-- c. If the list contains the number x, 
+--    then it also contains the numbers 2x, 3x, and 5x.
+-- d. The list contains no other numbers (other than mentioned above).
+merge xxs@(x:xs) yys@(y:ys) | x == y = x : merge xs ys 
+                            | x < y  = x : merge xs yys 
+                            | x>y    = y : merge xxs ys
+
+hamming = 1 : merge (map (2*) hamming) 
+                    (merge (map (3*) hamming) (map (5*) hamming))
