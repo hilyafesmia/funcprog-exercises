@@ -58,9 +58,9 @@ hamming = 1 : merge (map (2*) hamming)
                     (merge (map (3*) hamming) (map (5*) hamming))
 
 -- MERGE SORT
-mergeSort merge xs  | length xs < 2 = xs
-                    | merge (mergeSort (take ((length xs) `div` 2) xs))
-                            (mergeSort (drop ((length xs) `div` 2) xs))
+mergeSort xs    | length xs < 2 = xs
+                | merge (mergeSort (take ((length xs) `div` 2) xs))
+                        (mergeSort (drop ((length xs) `div` 2) xs))
 
 -- Get numbers smaller than n
 lebihkecil n = [ x | x <- [1 .. n]]
