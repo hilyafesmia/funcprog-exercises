@@ -14,6 +14,7 @@ maxTiga a b c | (a >= b && a >= c) = a | (b >= c) = b | otherwise = c
 
 -- Soal 8, 9, 10 menggunakan kodingan monad robot
 -- 8. Tentukan tipe fungsi updateState
+updateState :: (RobotState -> RobotState) -> Robot ()
 
 -- 9. Definisikan fungsi turnRight
 
