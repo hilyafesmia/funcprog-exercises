@@ -47,8 +47,9 @@ module Robot where
     getCoinsToWall = while (isnt blocked) $
                        do move
                           pickCoin
-    
-    -- mapM_ in moven maps every monad object (in this case: move)
+
+    -- mapM_ :: (Foldable t, Monad m) => (a -> m b) -> t a -> m ()
+    -- mapM_ in moven maps every monad object (in this case: move) and ignores the output because we only need the side effects it gives
     -- moven n = move >> moven(n-1)
     -- moven n = move >> move > ... >> move sebanyak n kali
     moven :: Int -> Robot ()
@@ -530,6 +531,9 @@ module Robot where
                   (twice >> turnRight >> moven n)
                   (twice >> loop (n+1))
     
+    -- forLoop implementation
+    forLoop [] action = return()
+    forLoop (x:xs) action = (action x) >> (forLoop action xs)
     
     main = runRobot (moven 5 >> turnRight >> moven 5 >> turnLeft >> moven 20  ) s0 g3
     main0 = runRobot spiral s0 g3
