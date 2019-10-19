@@ -145,8 +145,12 @@ module Robot where
     move = cond1 (isnt blocked &&* (battery >* return 0))
              (Robot $ \s _ w -> do
                 let newPos = movePos (position s) (facing s)
+                -- Deduct energy when moving
+                let newEnergy = updateState (\s s {energy = (energy s) - 10})
                 graphicsMove w s newPos
-                return (s {position = newPos}, ())
+                -- Update Robot's energy state to a deducted one
+                return (s {position = newPos
+                            , energy = newEnergy}, ())
              )
     
     movePos :: Position -> Direction -> Position
