@@ -59,3 +59,13 @@ hamming = 1 : merge (map (2*) hamming)
 
 -- Get numbers smaller than n
 lebihkecil n = [ x | x <- [1 .. n]]
+
+-- Implement concat to a list full of lists
+concat [[]] = []
+concat [] = []
+-- First implementation
+concat (xs:xss) = xs ++ (concat xss)
+-- Alternative implementation with foldl (++)
+foldlConcat xss = foldl (++) [] xss
+-- Alternative implementation with foldl anonymous fun
+foldlConcat xss = foldl (\xs y -> xs ++ y) [] xss
