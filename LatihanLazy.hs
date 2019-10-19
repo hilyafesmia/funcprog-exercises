@@ -39,3 +39,7 @@ pythaTriple = [(x, y, z) | z <- [5..], y <- [4..z], x <- [3..y], x^2 + y^2 == z^
 add [] [] = []
 add (a:as) (b:bs) = (a+b) : (add as bs)
 fibs  =  1 : 1 : add fibs (tail fibs)
+
+-- Summing every element of a list
+sumList [] = 0
+sumList (x:xs) = x + sumList xs
