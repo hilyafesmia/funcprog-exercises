@@ -22,6 +22,8 @@ divisor n = [x | x <- [1..n], n `mod` x == 0]
 quickSort (x:xs) = quickSort [ y | y <- xs, y <= x ] ++ [x] ++ quickSort [ y | y <- xs, y > x ]
 
 -- 4. Buatlah definisi infinite list untuk permutation.
+perms [] = [[]]
+perms ls = [ x:ps | x <- ls, ps <- perms (ls\\[x]) ] 
 
 -- 5. Buatlah definisi untuk memberikan infinite list dari bilangan prima menerapkan a l g o r i t m a S​ i e v e o f E r a s t o t h e n e s .​
 sieveOfErastothenes [] = []
