@@ -60,6 +60,8 @@ module Robot where
             , color     :: Color
             , treasure  :: [Position]
             , pocket    :: Int
+            -- Added energy to RobotState
+            , energy    :: Int
             }
          deriving Show
     
@@ -71,6 +73,8 @@ module Robot where
                     , facing   = North
                     , treasure = tr
                     , pocket   = 0
+                    -- Added initial value for RobotState
+                    , energy   = 100
                     }
     
     type Position = (Int,Int)
