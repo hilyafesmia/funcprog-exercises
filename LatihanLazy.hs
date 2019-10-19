@@ -69,3 +69,14 @@ concat (xs:xss) = xs ++ (concat xss)
 foldlConcat xss = foldl (++) [] xss
 -- Alternative implementation with foldl anonymous fun
 foldlConcat xss = foldl (\xs y -> xs ++ y) [] xss
+
+-- BUBBLE SORT
+-- Helper function: compare 2 elements
+getMax a b  | a > b = a
+            | otherwise = b
+getMin a b  | a < b = a
+            | otherwise = b
+-- Helper fucntion: swap 2 element
+swapElem y (x:xs) = getMin x y : swapElem (getMax x y) xs
+
+bubbleSort xs = foldl (swapElem) [] xs
