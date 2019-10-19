@@ -13,7 +13,7 @@ module Robot where
     import Control.Monad
     import Control.Applicative
     import System.IO
-    -- import SOE
+    import SOE
     
     -- import qualified GraphicsWindows as GW (getEvent)
     
@@ -135,8 +135,14 @@ module Robot where
     blocked = Robot $ \s g _ ->
                 return (s, facing s `notElem` (g `at` position s))
     
+    -- Added monad variable battery to query energy state
+    battery :: Robot Int
+    battery = queryState energy
+
+    -- Check if there is still battery power left to move
+    -- Robot can only move if it has battery power left
     move      :: Robot ()
-    move = cond1 (isnt blocked)
+    move = cond1 (isnt blocked &&* (battery >* return 0))
              (Robot $ \s _ w -> do
                 let newPos = movePos (position s) (facing s)
                 graphicsMove w s newPos
