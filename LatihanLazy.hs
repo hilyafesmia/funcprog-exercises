@@ -31,3 +31,11 @@ sieveOfErastothenes (x:xs) = x : (sieveOfErastothenes [ y | y <- xs, y `mod` x /
 
 -- 6. Buatlah definisi infinite list dari ​triple pythagoras.​ List tersebut terdiri dari element triple bilangan bulat positif yang mengikut persamaan pythagoras x​ 2​ ​ + y2​ ​ = z2​ ​ ​.
 pythaTriple = [(x, y, z) | z <- [5..], y <- [4..z], x <- [3..y], x^2 + y^2 == z^2 ]
+
+-- Other exercises in  class
+
+-- FIBONACCI SEQUENCE
+-- Helper function: Take one element of each list and add them
+add [] [] = []
+add (a:as) (b:bs) = (a+b) : (add as bs)
+fibs  =  1 : 1 : add fibs (tail fibs)
