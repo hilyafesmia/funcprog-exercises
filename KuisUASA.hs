@@ -16,12 +16,14 @@ zcb ​::​ ​Date​ ​->​ D​ ouble​ -​ >​ ​Currency​ ​->​
 -- 5. Tuliskan 5 baris potongan code (atau pseudo code) yang anda kontribusikan pada tugas kelompok. Jelaskan keterkaitan nya dengan penerapan ​Functional Style.​
 
 -- 6. Tunjukkan penerapan ​Monad​ ataupun ​Applicative Functor​ pada tugas kelompok anda (boleh menjelaskan kontribusi rekan anda)
+Teman kelompok saya menerapkan IO monad menggunakan Haskell
+IO monad dipakai dalam membaca file csv yang berisi daftar harga mobil dan daftar bank
 
 -- 7. Berikancontohsebuahfungsiyang​purefunction​dalamj​avascript​.
--- A function is considered pure, when:
--- It return a value computed using only the arguments passed to it.
--- It avoids mutating its arguments, or any other external variables.
--- A pure function always returns the same values given the same arguments.
+A function is considered pure, when:
+It return a value computed using only the arguments passed to it.
+It avoids mutating its arguments, or any other external variables.
+A pure function always returns the same values given the same arguments.
 function isIndexPage() {
   return window.location.pathname === "/";
 }
