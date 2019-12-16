@@ -15,6 +15,10 @@
 -- 6. Tunjukkan penerapan​ ​Point-Free Style​ ​pada tugas kelompok anda (boleh menjelaskan kontribusi rekan anda)
 
 -- 7. Berikan contoh ​referential transparency.​
+An expression is said to be referentially transparent when it can be replaced with its corresponding value without changing the application's behavior.
+function add2(a) {
+     return a + 2
+}
 
 -- 8. Tuliskan potongan kode dan langkah penggunaan ​useReducer​ pada tutorial Todo-List ​untuk t​ oggle-completed​ ​todo-item.​
 const [todos, despatch] = useReducer(toDoReducer, initialState)
