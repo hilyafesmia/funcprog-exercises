@@ -8,6 +8,7 @@ rotabc = map abc
         abc  x  =  x
         
 -- 3. Definisikan fungsi ​last​, dengan menerapkan p​ oint-free style.​ Fungsi l​ ast​ tersebut menerima sebuah list dan mengembalikan elemen terakhir dari list tersebut.
+last = head . reverse
 
 -- 4. Sebagaimanamaterikuliahterkait​ComposingContract,​diperlihatkansebuah contract​ yang disebut Z​ ero-Coupon Bound (z​ cb​).​ Pemanggilan fungsi ​zcb t x k,​ menyatakan bahwa pada waktu ​t,​ ​contract​ ini akan senilai dengan ​x​ pada kurs ​k​ . Misalkan fungsi contract definisi lain sudah tersedia. Bagaimana mengkomposisikan nya untuk mendefinisikan fungsi z​ cb​. Fungsi yang boleh anda gunakan adalah antara lain: (w​ hen, give, and, or, at, scale, konst, one, zero)​
 zcb ​::​ ​Date​ ​->​ D​ ouble​ -​ >​ ​Currency​ ​->​ ​Contract
@@ -17,6 +18,13 @@ zcb ​::​ ​Date​ ​->​ D​ ouble​ -​ >​ ​Currency​ ​->​
 -- 6. Tunjukkan penerapan ​Monad​ ataupun ​Applicative Functor​ pada tugas kelompok anda (boleh menjelaskan kontribusi rekan anda)
 
 -- 7. Berikancontohsebuahfungsiyang​purefunction​dalamj​avascript​.
+-- A function is considered pure, when:
+-- It return a value computed using only the arguments passed to it.
+-- It avoids mutating its arguments, or any other external variables.
+-- A pure function always returns the same values given the same arguments.
+function isIndexPage() {
+  return window.location.pathname === "/";
+}
 
 -- 8. Tuliskan potongan kode dan langkah penggunaan ​useReducer​ pada tutorial Todo-List ​untuk penambahan t​ odo-item.​
 
