@@ -24,11 +24,23 @@ A function is considered pure, when:
 It return a value computed using only the arguments passed to it.
 It avoids mutating its arguments, or any other external variables.
 A pure function always returns the same values given the same arguments.
+
 function isIndexPage() {
   return window.location.pathname === "/";
 }
 
 -- 8. Tuliskan potongan kode dan langkah penggunaan ​useReducer​ pada tutorial Todo-List ​untuk penambahan t​ odo-item.​
+const [todos, dispatch] = useReducer(toDoReducer, initialState);
+
+const toDoReducer = (state, action) => {
+  switch (actionn.type) {
+    case "ADD_TODO": {
+      return old TODOs annd new TODO
+    }
+    default: {
+      return state;
+  }
+}
 
 -- 9. Pada contoh paparan ​functional component​ di kelas, penggunaan ​useState​ untuk name​ dan s​ urname​ dapat disederhanakan lagi. Tuliskan ​pseudo code​ dan langkah penyederhanaannya.
 
