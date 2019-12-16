@@ -43,5 +43,15 @@ const toDoReducer = (state, action) => {
 }
 
 -- 9. Pada contoh paparan ​functional component​ di kelas, penggunaan ​useState​ untuk name​ dan s​ urname​ dapat disederhanakan lagi. Tuliskan ​pseudo code​ dan langkah penyederhanaannya.
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+  return {
+    value,
+    onChange: handleChange,
+  };
+}
 
 -- 10. Definisikan konstanta ​True​ dan konstanta ​False​ dalam lambda calculus. Gunakan definisi tersebut untuk mendefinisikan statement ​if-then-else.​
