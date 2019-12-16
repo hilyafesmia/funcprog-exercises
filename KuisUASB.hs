@@ -17,6 +17,18 @@
 -- 7. Berikan contoh ​referential transparency.​
 
 -- 8. Tuliskan potongan kode dan langkah penggunaan ​useReducer​ pada tutorial Todo-List ​untuk t​ oggle-completed​ ​todo-item.​
+const [todos, despatch] = useReducer(toDoReducer, initialState)
+const toDoReducer = (state, action) => {
+  switch(action.type) {
+    ...
+    case 'TOGGLE_COMPLETE': {
+      return state.map((item) =>
+        item.id === action.id ? {...item, complete: !item.complete}
+        : item
+      )
+    }
+  }
+}
 
 -- 9. Pada contoh paparan ​functional component​ di kelas, implementasi menggunakan Hooks Effect​ dalam meng​-edit document.title s​ ecara​ real-time​ dapat di-reuse dan dijadikan​pure-function​.Tuliskanp​ seudocode​danlangkahpenyederhanaannya.
 const useDocumentTitle = (title) => {
