@@ -6,13 +6,16 @@
 -- 2. Write a definition of composition function (c​ ompose​) similar to the compose/dot operator ( •​ ​ ) in Haskell prelude, that accept two functions and return a new function. Define the type of the c​ ompose​ function. 
 
 -- 3. Definisikan fungsi ​last​, dengan hanya menggunakan f​ oldr​ atau ​foldl.​ ​ Fungsi ​last tersebut menerima sebuah list dan mengembalikan elemen terakhir dari list tersebut.
+last ls = foldl (\x y -> y) 0 ls
 
 -- 4. Sebagaimanamaterikuliahterkait​ComposingContract,​diperlihatkansebuah contract​ yang disebut Z​ ero-Coupon Bound (z​ cb​).​ Pemanggilan fungsi ​zcb t x k,​ menyatakan bahwa pada waktu ​t,​ ​contract​ ini akan senilai dengan ​x​ pada kurs ​k​ . Misalkan fungsi contract definisi lain sudah tersedia. Bagaimana mengkomposisikan nya untuk mendefinisikan fungsi z​ cb​. Fungsi yang boleh anda gunakan adalah antara lain: (w​ hen, give, and, or, at, scale, konst, one, zero)​
 -- zcb ​::​ ​Date​ ​->​ D​ ouble​ -​ >​ ​Currency​ ​->​ ​Contract
+zcb t x k = when (at t) (scale (one k))
 
 -- 5. Tuliskan 5 baris potongan code (atau pseudo code) yang anda kontribusikan pada tugas kelompok. Jelaskan keterkaitan nya dengan ​Higher Order Function​.
      
 -- 6. Tunjukkan penerapan​ ​Point-Free Style​ ​pada tugas kelompok anda (boleh menjelaskan kontribusi rekan anda)
+
 
 -- 7. Berikan contoh ​referential transparency.​
 An expression is said to be referentially transparent when it can be replaced with its corresponding value without changing the application's behavior.
