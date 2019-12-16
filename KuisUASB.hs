@@ -4,6 +4,8 @@
 -- "This is a Sentence."
 
 -- 2. Write a definition of composition function (c​ ompose​) similar to the compose/dot operator ( •​ ​ ) in Haskell prelude, that accept two functions and return a new function. Define the type of the c​ ompose​ function. 
+composeFunction :: (gx -> fx) -> (g -> gx) -> g -> fx
+composeFunction f g x = f(g x)
 
 -- 3. Definisikan fungsi ​last​, dengan hanya menggunakan f​ oldr​ atau ​foldl.​ ​ Fungsi ​last tersebut menerima sebuah list dan mengembalikan elemen terakhir dari list tersebut.
 last ls = foldl (\x y -> y) 0 ls
