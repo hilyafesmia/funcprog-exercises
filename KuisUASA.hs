@@ -14,7 +14,6 @@ isNotAppearTwiceInARow []                            = True
 notNumber x = x `notElem` "1234567890"
 numberRemoval = filter notNumber
 
-
 -- 2. Writeafunctionr​ otabc​thatchanges​a'​stob​ '​s,b​ ​'stoc​ ​'sandc​ '​stoa​ ​'sinastring. Only lowercase letters are affected.
 rotabc = map abc 
   where abc 'a' = 'b'
@@ -30,6 +29,7 @@ zcb :: Date -> Double -> Currency -> Contract
 zcb t x k = when (at t) (scale x (one k))
 
 -- 5. Tuliskan 5 baris potongan code (atau pseudo code) yang anda kontribusikan pada tugas kelompok. Jelaskan keterkaitan nya dengan penerapan ​Functional Style.​
+
 
 -- 6. Tunjukkan penerapan ​Monad​ ataupun ​Applicative Functor​ pada tugas kelompok anda (boleh menjelaskan kontribusi rekan anda)
 Teman kelompok saya menerapkan IO monad menggunakan Haskell
@@ -75,3 +75,21 @@ function useFormInput(initialValue) {
 }
 
 -- 10. Definisikan konstanta ​True​ dan konstanta ​False​ dalam lambda calculus. Gunakan definisi tersebut untuk mendefinisikan statement ​if-then-else.​
+True = λxy.x 
+False = λxy.y
+
+if P then E1 else E2 (ditulisnya PE1E2)
+
+Jika P == true:
+= PE1E2
+= (true)E1E2
+= (λxy.x)E1E2
+= E1
+
+Jika P == false:
+= PE1E2
+= (false)E1E2
+= (λxy.y)E1E2
+= E2
+
+
