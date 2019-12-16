@@ -11,7 +11,8 @@ rotabc = map abc
 last = head . reverse
 
 -- 4. Sebagaimanamaterikuliahterkait​ComposingContract,​diperlihatkansebuah contract​ yang disebut Z​ ero-Coupon Bound (z​ cb​).​ Pemanggilan fungsi ​zcb t x k,​ menyatakan bahwa pada waktu ​t,​ ​contract​ ini akan senilai dengan ​x​ pada kurs ​k​ . Misalkan fungsi contract definisi lain sudah tersedia. Bagaimana mengkomposisikan nya untuk mendefinisikan fungsi z​ cb​. Fungsi yang boleh anda gunakan adalah antara lain: (w​ hen, give, and, or, at, scale, konst, one, zero)​
-zcb ​::​ ​Date​ ​->​ D​ ouble​ -​ >​ ​Currency​ ​->​ ​Contract
+zcb :: Date -> Double -> Currency -> Contract
+zcb t x k = when (at t) (scale x (one k))
 
 -- 5. Tuliskan 5 baris potongan code (atau pseudo code) yang anda kontribusikan pada tugas kelompok. Jelaskan keterkaitan nya dengan penerapan ​Functional Style.​
 
@@ -27,6 +28,10 @@ A pure function always returns the same values given the same arguments.
 
 function isIndexPage() {
   return window.location.pathname === "/";
+}
+
+function add(a,b) {
+  returnn a + b;
 }
 
 -- 8. Tuliskan potongan kode dan langkah penggunaan ​useReducer​ pada tutorial Todo-List ​untuk penambahan t​ odo-item.​
