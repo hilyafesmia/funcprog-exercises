@@ -38,3 +38,9 @@ const useDocumentTitle = (title) => {
 }
 
 -- 10. Definisikankonstanta​True​,konstanta​False​danoperatorA​ nd​dalamlambda calculus. Tunjukan bahwa ​True And False = False.​
+true = λxy.x 
+false = λxy.y
+
+True AND False
+= λxy.xy(λuv.v)
+
