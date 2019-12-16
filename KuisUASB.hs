@@ -3,6 +3,7 @@
 -- > capitalise "this is a sentence." ["a", "is"]
 -- "This is a Sentence."
 
+
 -- 2. Write a definition of composition function (c​ ompose​) similar to the compose/dot operator ( •​ ​ ) in Haskell prelude, that accept two functions and return a new function. Define the type of the c​ ompose​ function. 
 composeFunction :: (gx -> fx) -> (g -> gx) -> g -> fx
 composeFunction f g x = f(g x)
