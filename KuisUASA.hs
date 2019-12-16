@@ -1,4 +1,19 @@
 -- 1. Given a list of words, remove from the list all those which contain four or more vowels and those which have same letter appearing twice (or more) in a row. In addition, any word containing numbers should have the numbers removed. Note that the number removal should happen before any other operations so that the subsequent operations can remove the word if necessary.
+weirdFilter = filter isThreeOrLessVowels
+              . filter isNotAppearTwiceInARow
+              . map numberRemoval
+              
+isVowel x = x `elem` "aiueoAIUEO"
+countVowel = length . filter isVowel
+isThreeOrLessVowels str = countVowel str < 4
+
+isNotAppearTwiceInARow (fst:scd:ls)  | (fst == scd)  = False
+isNotAppearTwiceInARow (fst:ls)                      = isNotAppearTwiceInARow ls
+isNotAppearTwiceInARow []                            = True
+
+notNumber x = x `notElem` "1234567890"
+numberRemoval = filter notNumber
+
 
 -- 2. Writeafunctionr​ otabc​thatchanges​a'​stob​ '​s,b​ ​'stoc​ ​'sandc​ '​stoa​ ​'sinastring. Only lowercase letters are affected.
 rotabc = map abc 
